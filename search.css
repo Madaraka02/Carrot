@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+body{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:  black;
+    /* background-image: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80");
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    animation: rotate 1s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke: #00ccff;
+    stroke-linecap: round;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transform: translate(5px, 5px);
+    animation: animate 2s linear infinite;
+}
+@keyframes animate {
+    0%, 100%{
+        stroke-dashoffset: 440;
+    }
+    50%{
+        stroke-dashoffset: 0;
+    }
+
+    50.1%{
+        stroke-dashoffset: 880;
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(221, 81, 81);
+    padding: 10px;
+    display: none;
+    z-index: 9999;
+    border-radius: 7px;
+  }
+  
+  .popup.show {
+    display: block;
+  }
+.closebtn{
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}  
+.header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://static.standard.co.uk/2022/11/16/10/netflix-s.jpg?width=1200&auto=webp&quality=75');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 5%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+
+}
+.logo{
+    width: 300px;
+    cursor: pointer;
+}
+.header-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 60px;
+    color: #fff;
+}
+.header-content h1{
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 700;
+    max-width: 800px;
+    color: #fff;
+    letter-spacing: 3px;
+}
+.header-content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+.search-bar{
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.search-bar input{
+    flex: 1;
+    border: 0;
+    outline: 0;
+    height: 40px;
+    padding: 15px 20px;
+
+    padding: 0 5px;
+}
+.icon {
+    /* background:  rgb(69, 68, 68); */
+    color: #0e1538;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 15px 20px;
+    cursor: pointer;
+    border: 0;
+}
+.icon:hover {
+    background:  rgb(69, 68, 68);
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+/* nav{
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    transition: 0.5s;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+nav ul li.logo{
+    color: rgb(150, 147, 147);
+    justify-content: center;
+    align-items: center;
+
+}
+
+nav ul li.logo img{
+    height: 70px;
+
+}
+
+nav ul li.search-bar{
+    height: 35px;
+    display: flex;
+    background: #011227;
+    border-radius: 5px;
+
+}
+
+nav ul li.search-bar input{ 
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 5px 0 0 5px;
+    color: rgb(118, 115, 115);
+    font-size: 16px;
+    font-size: medium;
+    font-weight: 400;
+    letter-spacing: 2px;
+    background: #011227;
+
+}
+nav ul li.search-bar .icon{
+    height: 100%;
+    line-height: 40px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+}
+
+nav ul li.search-bar .icon:hover{
+    background: rgb(18, 18, 18);
+}
+
+nav ul li.search-bar .icon span{
+    color: rgb(118, 115, 115);
+    font-size: 18px;
+}
+
+nav ul li.search-bar .icon span:hover{
+    color: rgb(246, 238, 238);
+} */
+
+.main{
+    height: 100vh;
+    background: #f00;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgb(2, 3, 7,0.4);
+}
+.main .main-desc {
+    position: absolute;
+    top: 20;
+    left: 0;
+    z-index: 1000;
+    /* margin-top: 200px; */
+    margin-left: 30px;
+    
+}
+.main .main-desc .desc-title{
+    color: #fff;
+    font-size: larger;
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: 3px;
+}
+.main .main-desc .desc-subtitle{
+    color: #fff;
+    font-size: medium;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+.main img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    object-position: center;
+    z-index: -1;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    padding: 0 30px;
+}
+
+.card{
+    position: relative;
+    width: 300px;
+    height: 450px;
+    background: #fff;
+    /* border-radius: 7px; */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+.card .poster::before{
+    content: '';
+    position: absolute;
+    bottom: -180px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, black 50%,transparent);
+    transition: 0.5s;
+    z-index: 1;
+}
+.card:hover .poster::before{
+
+    bottom: 0px;
+}
+.card .poster{
+    position: relative;
+    overflow: hidden;
+}
+
+.card .poster img{
+    width: 100%;
+    height: 450px;
+    max-height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover .poster img{
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+.card .details{
+    position: absolute;
+    width: 100%;
+    bottom: -80px;
+    transition: 0.5s;
+    padding: 20px;
+    left: 0;
+    z-index: 2;
+}
+
+.card:hover .details{
+    bottom: 40px;
+}
+.card .details h3{
+    color: rgb(251, 246, 246);
+    font-size: 20px;
+    font-size: large;
+    letter-spacing: 3px;
+}
+
+.card .details .title{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.title h3{
+    flex: 1;
+    font-size: medium;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.card .details .title h6{
+    color: rgb(178, 175, 175);
+    font-size: 16px;
+    font-size: small;
+    letter-spacing: 2px;
+}
+
+.card .details .tags{
+   position: relative;
+   margin-top: 5px;
+}
+
+.card .details .tags span{
+    padding: 2px 5px;
+    color: rgb(230, 218, 218);
+    background: rgb(28, 28, 28);
+    border-radius: 5px;
+ }
+
+ .card .details .info{
+    color: rgb(192, 190, 190);
+    margin-top: 10px;
+
+ }
+ .card .details .info p{
+    font-size: medium;
+    letter-spacing: 2px;
+ }
+
+ .card .details .more a{
+    margin-top: 10px;
+    position: relative;
+    width: 160px;
+    height: 40px;
+    display: inline-block;
+    background: #fff;
+ }
+ .card .details .more a::after,
+ .card .details .more a::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    transition: 0.5s;
+    background: #f00;
+ }
+
+ .card .details .more a:nth-child(1):before,
+ .card .details .more a:nth-child(1):after{
+    background: linear-gradient(45deg,#00ccff, #0e1538, #0e1538,#d400d4);
+
+ }
+
+ .card .details .more a:hover:before{
+    inset: -3px;
+ }
+
+ .card .details .more a:hover:after{
+    inset: -3px;
+    filter: blur(10px);
+ }
+
+
+ .card .details .more a span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    z-index: 10;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid rgb(233, 150, 150);
+ }  
+
+
+ /* @media only screen and(max-width: 600px) {
+    .container{
+        padding: 0;
+    }
+    .header-content h1{
+        font-size: 40px;
+        line-height: 70px;
+        font-weight: 700;
+        max-width: 800px;
+        color: #fff;
+        letter-spacing: 3px;
+    }
+    .header{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://static.standard.co.uk/2022/11/16/10/netflix-s.jpg?width=1200&auto=webp&quality=75');
+        background-size: cover;
+        background-position: center;
+        padding: 10px 5%;
+    }
+ } */
+
+ nav{
+    /* position: sticky; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px;
+    z-index: 1000;
+    display: flex;
+    height: 100px;
+    /* background: rgb(202, 5, 5); */
+}
+.filters{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.year{
+    outline: none;
+    border: 0;
+    padding: 10px 5px;
+    border-radius: 3px;
+    background: #2b2c2c;
+    color: #fff;
+    font-size: medium;
+    letter-spacing: 2px;
+}
+
+.filters select{
+    outline: none;
+    border: 0;
+    padding: 10px 5px;
+    border-radius: 3px;
+    margin: 10px;
+    width: 120px;
+    background: #2b2c2c;
+    color: #fff;
+    font-size: medium;
+    letter-spacing: 2px;
+    
+}
+
+
+.searcht{
+    background: #2b2c2c;
+    width: 30%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searcht input{
+    flex: 1;
+    border: 0;
+    outline: 0;
+    /* height: 40px; */
+    padding: 10px 5px;
+    background: #2b2c2c;
+    font-size: medium;
+    letter-spacing: 2px;
+    color: #fff;
+    
+}
+.iconn {
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 15px 20px;
+    cursor: pointer;
+    border: 0;
+    background: #2b2c2c;
+
+}
+
+@media (max-width:600px) {
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .logo{
+        width: 150px;
+        cursor: pointer;
+    }
+    .searcht{
+        width: 100%;
+    }
+    .filters select{
+        width: 90px;
+    }
+    .container{
+        margin-top: 80px;
+    }
+
+}
