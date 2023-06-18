@@ -560,10 +560,11 @@ nav ul li.search-bar .icon span:hover{
     }
     .container{
         margin-top: 80px;
-        padding: 0 5px;
+        padding: 0 20px;
     }
     .card{
         width: 100%;
+        height: 100%;
     }
 
 }
