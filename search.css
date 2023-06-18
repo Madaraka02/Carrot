@@ -400,6 +400,7 @@ nav ul li.search-bar .icon span:hover{
     height: 40px;
     display: inline-block;
     background: #fff;
+    color: #f00;
  }
  .card .details .more a::after,
  .card .details .more a::before{
@@ -408,11 +409,13 @@ nav ul li.search-bar .icon span:hover{
     inset: 0;
     transition: 0.5s;
     background: #f00;
+    color: #f00;
  }
 
  .card .details .more a:nth-child(1):before,
  .card .details .more a:nth-child(1):after{
     background: linear-gradient(45deg,#00ccff, #0e1538, #0e1538,#d400d4);
+    color: #f00;
 
  }
 
