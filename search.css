@@ -287,7 +287,7 @@ nav ul li.search-bar .icon span:hover{
     margin-bottom: 40px;
     margin-top: 40px;
 
-    padding: 0 30px;
+    /* padding: 0 30px; */
 }
 
 .card{
@@ -560,6 +560,7 @@ nav ul li.search-bar .icon span:hover{
     }
     .container{
         margin-top: 80px;
+        padding: 0 5px;
     }
 
 }
